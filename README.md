@@ -1,6 +1,9 @@
 ![License](https://img.shields.io/badge/license-GPLv2-brightgreen "License")
 ![License](https://img.shields.io/static/v1?label=PHP&message=7.2|7.3&color=7378ae
             "Version")
+[![License](https://api.travis-ci.com/KNY00/lzutf8-php.svg?branch=master
+            "travis ci") ](https://travis-ci.com/KNY00/lzutf8-php/builds/143966512)
+        [![codecov](https://codecov.io/gh/KNY00/lzutf8-php/branch/master/graph/badge.svg)](https://codecov.io/gh/KNY00/lzutf8-php)     
 # lzutf8-php
 PHP Decompressor for [LZ-UTF8](https://github.com/rotemdan/lzutf8.js)
 
