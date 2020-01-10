@@ -1,0 +1,24 @@
+{
+    "name": "kny00/lzutf8-php",
+    "version": "0.0.1",
+    "description": "Lzutf8 implementation for php",
+    "keywords": [
+        "lzutf8",
+        "php",
+        "compression"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "KNY"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Knaya\\Lzutf8\\": "src/Lzutf8"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5"
+    }
+}
