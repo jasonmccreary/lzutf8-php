@@ -41,18 +41,18 @@ class Lzutf8
 
         do {
             for ($index = $firstIndex; $index < $stringLen; $index += 1) {
-                if (isset($utfCacheArr[$utfString{$index}])) {
-                    if ($utfCacheArr[$utfString{$index}] === false) {
+                if (isset($utfCacheArr[$utfString[$index]])) {
+                    if ($utfCacheArr[$utfString[$index]] === false) {
                         continue;
                     }
-                    $binaryValue = $utfCacheArr[$utfString{$index}];
+                    $binaryValue = $utfCacheArr[$utfString[$index]];
                 } else {
-                    $binaryValue = ord($utfString{$index});
-                    $utfCacheArr[$utfString{$index}] = $binaryValue;
+                    $binaryValue = ord($utfString[$index]);
+                    $utfCacheArr[$utfString[$index]] = $binaryValue;
                 }
 
                 if ($binaryValue < 0xC0) {
-                    $utfCacheArr[$utfString{$index}] = false;
+                    $utfCacheArr[$utfString[$index]] = false;
                     continue;
                 }
 
@@ -64,11 +64,11 @@ class Lzutf8
                     $replaceSecLen -= 0x20;
                 }
 
-                if (!isset($utfString{$index + 1})) {
+                if (!isset($utfString[$index + 1])) {
                     break;
                 }
 
-                $firstByte = ord($utfString{$index + 1});
+                $firstByte = ord($utfString[$index + 1]);
 
                 if ($firstByte >= 0x80) {
                     if ($firstByte < 0xC0) {
@@ -80,10 +80,10 @@ class Lzutf8
                 if ($distanceByteNum === 1) {
                     $distance = $firstByte;
                 } else {
-                    if (!isset($utfString{$index + 2})) {
+                    if (!isset($utfString[$index + 2])) {
                         break;
                     }
-                    $secondDisByte = $utfString{$index + 2};
+                    $secondDisByte = $utfString[$index + 2];
                     $distance = ($firstByte * 0x100) + ord($secondDisByte);
                 }
 
